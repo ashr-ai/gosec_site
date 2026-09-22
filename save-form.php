@@ -1,7 +1,6 @@
 <?php
 
 header("Content-Type: application/json; charset=UTF-8");
-
 $file = __DIR__ . "/form-responses.json";
 
 // Récupérer les données envoyées
@@ -11,12 +10,10 @@ $data = json_decode($input, true);
 // Vérifier que les données sont valides
 if (!$data) {
     http_response_code(400);
-
     echo json_encode([
         "success" => false,
         "message" => "Données invalides."
     ]);
-
     exit;
 }
 
@@ -49,12 +46,10 @@ $result = file_put_contents(
 
 if ($result === false) {
     http_response_code(500);
-
     echo json_encode([
         "success" => false,
         "message" => "Impossible d'enregistrer la réponse."
     ]);
-
     exit;
 }
 
