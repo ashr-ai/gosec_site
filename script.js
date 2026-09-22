@@ -149,7 +149,7 @@ function initTeam(PEOPLE) {
 
     github: `
       <svg
-        class="qr-icon"
+        class="qr-icon qr-icon-github"
         viewBox="0 0 24 24"
         aria-hidden="true"
       >
