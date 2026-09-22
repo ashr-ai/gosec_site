@@ -35,6 +35,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -136,7 +140,7 @@ p {
   mix-blend-mode: overlay;
 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
- 
+
 }
 
 
@@ -180,13 +184,13 @@ p {
   letter-spacing: -0.02em;
 }
 
-.team-intro h2 span{
+.team-intro h2 span {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-style: normal;
   color: var(--color-primary-dark);
-  
-  
+
+
 }
 
 .team-intro p {
@@ -333,7 +337,7 @@ p {
   align-items: center;
   justify-content: center;
 
-  
+
   font-size: 64px;
   font-weight: 500;
 
@@ -401,7 +405,7 @@ p {
 .meta h3 {
   margin: 0;
 
-     font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   color: var(--color-white);
@@ -666,7 +670,7 @@ p {
   align-items: center;
   justify-content: center;
 
-  
+
   font-size: 10.5px;
   font-weight: 500;
 
@@ -936,7 +940,7 @@ p {
 
   color: var(--i-text);
 
-  
+
 
   display: flex;
   align-items: center;
@@ -1495,7 +1499,7 @@ p {
 }
 
 .site-footer .footer-giant {
-  
+
 
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -1558,7 +1562,7 @@ p {
   flex-direction: column;
   justify-content: center;
 
-  padding:  0vw 12vw 0 12vw ;
+  padding: 0vw 12vw 0 12vw;
 
   background:
     radial-gradient(circle at 80% 20%,
@@ -1583,9 +1587,10 @@ p {
 
 .about-logo {
   width: auto;
-  height: clamp(20px, 2vw, 68px);;
+  height: clamp(20px, 2vw, 68px);
+  ;
   margin-bottom: 30px;
-  
+
 
   flex-shrink: 0;
 
@@ -1730,6 +1735,7 @@ p {
 @media (max-width: 820px) {
   .about-section {
     display: block;
+    padding-top: 50px;
   }
 
   .about-content {
