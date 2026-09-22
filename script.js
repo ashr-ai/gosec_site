@@ -969,7 +969,7 @@ function initForm() {
 
   function setError(fieldId, message) {
     const input = document.getElementById(fieldId);
-    const error = document.getElementById(`err-${fieldId}`);
+    const error = document.getElementById(`err - ${fieldId} `);
 
     if (!input || !error) {
       return;
@@ -1032,7 +1032,7 @@ function initForm() {
     const autreInteret = autreTexte.value.trim();
 
     if (autreCheck.checked && autreInteret) {
-      interets.push(`Autre: ${autreInteret}`);
+      interets.push(`Autre: ${autreInteret} `);
     }
 
     const data = {
@@ -1053,24 +1053,12 @@ function initForm() {
         submitBtn.disabled = true;
       }
 
-      const formData = new URLSearchParams();
-
-      formData.append("form-name", "gosec-inscription");
-      formData.append("prenom", data.prenom);
-      formData.append("nom", data.nom);
-      formData.append("courriel", data.courriel);
-      formData.append("organisation", data.organisation);
-      formData.append("interets", data.interets);
-      formData.append("infolettre", data.infolettre ? "Oui" : "Non");
-      formData.append("autre_interet", data.autre_interet);
-      formData.append("date_soumission", data.date_soumission);
-
-      const response = await fetch("/", {
+      const response = await fetch("save-form.php", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
+          "Content-Type": "application/json"
         },
-        body: formData.toString()
+        body: JSON.stringify(data)
       });
 
       if (!response.ok) {
@@ -1085,7 +1073,7 @@ function initForm() {
 
       autreTexte.disabled = true;
 
-      document.getElementById("newsletter").checked = true;
+      document.getElementById("newsletter").checked = false;
 
     } catch (error) {
       console.error("Erreur formulaire :", error);
